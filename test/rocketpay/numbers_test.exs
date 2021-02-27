@@ -3,7 +3,9 @@ defmodule Rocketpay.NumbersTest do
   use ExUnit.Case
 
   alias Rocketpay.Numbers
-  #coloca após o describe o nome da função que será testada seguida de barra e a quantidade de argumentos
+  #coloca após o describe o nome da função que será testada seguida
+  #de barra e a quantidade de argumentos
+
   describe "sum_from_file/1" do
     test "when there is a file with the given name, returns the sum of number" do
       response = Numbers.sum_from_file("numbers")
