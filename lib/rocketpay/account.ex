@@ -17,9 +17,9 @@ defmodule Rocketpay.Account do
     timestamps()
   end
 
-  #Valida e mapeia dados
-  def changeset(params) do
-    %__MODULE__{}
+  #struct \\ %__MODULE__{}, significa que o changeset de update não começa com uma struct vazia
+  def changeset(struct \\  %__MODULE__{}, params) do
+    struct
     |> cast(params, @required_params) #faz o casting, logo se passar string no lugar de int ele transforma
     |> validate_required(@required_params) # valida que os campos obrigatórios
     |> check_constraint(:balance, name: :balance_must_be_positive_or_zero)
